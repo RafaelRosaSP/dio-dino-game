@@ -41,11 +41,9 @@ function createCactus() {
     let cactusPosition = 1000;
     let randomTime = Math.random() * 6000;
     
-    console.log(randomTime);
-
     cactus.classList.add('cactus');
     cactus.style.left = 1000 + 'px';
-    background.appendChild(cactus);
+    background.appendChild(cactus); 
 
     let leftInterval = setInterval(() => {
         if (cactusPosition < -60) {
@@ -56,6 +54,7 @@ function createCactus() {
             cactus.style.left = cactusPosition + 'px';
         }
     }, 20);
+    setTimeout(createCactus, randomTime);
 }
 
 createCactus();
