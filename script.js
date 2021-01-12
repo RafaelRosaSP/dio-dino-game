@@ -2,8 +2,22 @@ const dino = document.querySelector('.dino');
 
 function handleKeyup(event) { 
     if (event.keyCode === 32)   {
-        console.log('Pressionou espaço!');
+        jump();
     } 
+}
+
+function jump() {
+    let position = 0;
+
+    let upInterval = setInterval(() => {
+        if (position >= 150) {
+            clearInterval(upInterval);
+        }  else {
+            //subindo
+        position += 20;
+        dino.style.bottom = position + 'px';
+        } 
+    }, 20);
 }
 
 document.addEventListener('keyup',handleKeyup);
