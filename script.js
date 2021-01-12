@@ -1,5 +1,9 @@
 const dino = document.querySelector('.dino');
 
-document.addEventListener('keyup', function() {
-    console.log('pressionou uma tecla');
-});
+function handleKeyup(event) { 
+    if (event.keyCode === 32)   {
+        console.log('Pressionou espaço!');
+    } 
+}
+
+document.addEventListener('keyup',handleKeyup);
